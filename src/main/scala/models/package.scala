@@ -1,3 +1,4 @@
 package object models {
-  type UserId = Long
+  type UserId = Int
+  type RequestId = Int
 }

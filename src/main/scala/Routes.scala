@@ -1,9 +1,10 @@
 import akka.http.scaladsl.server.Directives._
-import api.{ApiErrorHandler, UsersApi}
+import api.{ApiErrorHandler, UsersApi, RequestApi}
 
-trait Routes extends ApiErrorHandler with UsersApi{
+trait Routes extends ApiErrorHandler with UsersApi with RequestApi{
   val routes =
     pathPrefix("rest") {
-      usersApi
+      usersApi ~
+      requestApi
     } ~ path("")(getFromResource("public/index.html"))
 }
