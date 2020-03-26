@@ -9,8 +9,8 @@ object RequestDao extends BaseDao{
   def findById(requestId: RequestId): Future[Request] = requestTable.filter(_.id === requestId).result.head
   def create(request: Request): Future[RequestId] = requestTable returning requestTable.map(_.id) += request
   def update(newRequest: Request, requestId: RequestId): Future[Int] = requestTable.filter(_.id === requestId)
-    .map(request => (request.donation, request.quantity, request.time, request.status))
-    .update((newRequest.donation, newRequest.quantity, newRequest.time, newRequest.status))
+    .map(request => (request.donation, request.quantity, request.date, request.status))
+    .update((newRequest.donation, newRequest.quantity, newRequest.date, newRequest.status))
 
   def delete(requestId: RequestId): Future[Int] = requestTable.filter(_.id === requestId).delete
 
