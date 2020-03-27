@@ -13,5 +13,3 @@ libraryDependencies += "com.typesafe.akka" %% "akka-http" % "10.1.11"
 libraryDependencies += "com.typesafe.akka" %% "akka-http-spray-json" % "10.1.11"
 libraryDependencies += "com.typesafe.slick" %% "slick" % "3.3.2"
 libraryDependencies += "com.typesafe.slick" %% "slick-hikaricp" % "3.3.2"
-
-enablePlugins(JavaAppPackaging)
