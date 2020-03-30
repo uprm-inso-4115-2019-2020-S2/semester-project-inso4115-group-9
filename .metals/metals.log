@@ -2757,3 +2757,12 @@ INFO  shutting down Metals
 INFO  started: Metals version 0.8.3 in workspace 'C:\Users\Ale\Documents\Projects\Web Design and Development\Requeriment Project\disaster-app\disaster-app'
 INFO  time: initialize in 0.49s
 INFO  skipping build import with status 'Installed'
+INFO  shutting down Metals
+INFO  started: Metals version 0.8.3 in workspace 'C:\Users\Ale\Documents\Projects\Web Design and Development\Requeriment Project\disaster-app\disaster-app'
+INFO  time: initialize in 0.45s
+INFO  skipping build import with status 'Installed'
+INFO  shutting down Metals
+INFO  started: Metals version 0.8.3 in workspace 'C:\Users\Ale\Documents\Projects\Web Design and Development\Requeriment Project\disaster-app\disaster-app'
+INFO  time: initialize in 0.44s
+INFO  skipping build import with status 'Installed'
+INFO  shutting down Metals
