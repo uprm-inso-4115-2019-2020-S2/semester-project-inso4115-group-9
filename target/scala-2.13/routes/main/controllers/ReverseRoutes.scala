@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/Users/Ale/Documents/Projects/Web Design and Development/Requeriment Project/disaster-app/disaster-app/conf/routes
-// @DATE:Sun Mar 29 14:27:13 BOT 2020
+// @DATE:Mon Mar 30 13:57:16 BOT 2020
 
 import play.api.mvc.Call
 

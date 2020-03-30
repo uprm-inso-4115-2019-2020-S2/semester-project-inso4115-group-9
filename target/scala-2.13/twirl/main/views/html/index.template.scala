@@ -44,7 +44,7 @@ Seq[Any](format.raw/*1.4*/("""
 
               /*
                   -- GENERATED --
-                  DATE: 2020-03-27T18:07:50.622
+                  DATE: 2020-03-30T13:57:16.693
                   SOURCE: C:/Users/Ale/Documents/Projects/Web Design and Development/Requeriment Project/disaster-app/disaster-app/app/views/index.scala.html
                   HASH: 0d065cd46dfd97b253d17925380b7980b6dae0dc
                   MATRIX: 722->1|818->3|848->8|879->31|918->33|948->37|1037->97

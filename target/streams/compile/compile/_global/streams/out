@@ -1,3 +1,0 @@
-[0m[[0m[31merror[0m] [0m[0mC:\Users\Ale\Documents\Projects\Web Design and Development\Requeriment Project\disaster-app\disaster-app\conf\routes:13:1: value getUser is not a member of controllers.User[0m
-[0m[[0m[31merror[0m] [0m[0mGET     /api/user/:userId               controllers.User.getUser(userId: Int)[0m
-[0m[[0m[31merror[0m] [0m[0mone error found[0m
