@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
-// @SOURCE:C:/Users/Ale/Documents/Projects/Web Design and Development/Requeriment Project/disaster-app/disaster-app/conf/routes
-// @DATE:Mon Mar 30 14:07:47 BOT 2020
+// @SOURCE:C:/Users/etorr/IdeaProjects/semester-project-inso4115-group-9/conf/routes
+// @DATE:Fri Apr 10 11:29:06 BOT 2020
 
 import play.api.routing.JavaScriptReverseRoute
 
@@ -10,7 +10,47 @@ import _root_.controllers.Assets.Asset
 // @LINE:9
 package controllers.javascript {
 
-  // @LINE:15
+  // @LINE:12
+  class ReverseRegister(_prefix: => String) {
+
+    def _defaultPrefix: String = {
+      if (_prefix.endsWith("/")) "" else "/"
+    }
+
+  
+    // @LINE:16
+    def goToLogin: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.Register.goToLogin",
+      """
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "login"})
+        }
+      """
+    )
+  
+    // @LINE:12
+    def listUsers: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.Register.listUsers",
+      """
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "register"})
+        }
+      """
+    )
+  
+    // @LINE:13
+    def createUser: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.Register.createUser",
+      """
+        function() {
+          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "register"})
+        }
+      """
+    )
+  
+  }
+
+  // @LINE:23
   class ReverseAssets(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -18,7 +58,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:15
+    // @LINE:23
     def versioned: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.Assets.versioned",
       """
@@ -30,7 +70,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:12
+  // @LINE:20
   class ReverseUser(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -38,7 +78,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:12
+    // @LINE:20
     def index: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.User.index",
       """
@@ -63,7 +103,11 @@ package controllers.javascript {
       "controllers.Application.index",
       """
         function() {
-          return _wA({method:"GET", url:"""" + _prefix + """"})
+        
+          if (true) {
+            return _wA({method:"GET", url:"""" + _prefix + """"})
+          }
+        
         }
       """
     )

@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
-// @SOURCE:C:/Users/Ale/Documents/Projects/Web Design and Development/Requeriment Project/disaster-app/disaster-app/conf/routes
-// @DATE:Mon Mar 30 14:07:47 BOT 2020
+// @SOURCE:C:/Users/etorr/IdeaProjects/semester-project-inso4115-group-9/conf/routes
+// @DATE:Fri Apr 10 11:29:06 BOT 2020
 
 
 package router {

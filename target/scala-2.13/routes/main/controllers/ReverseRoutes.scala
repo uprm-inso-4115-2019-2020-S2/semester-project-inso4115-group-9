@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
-// @SOURCE:C:/Users/Ale/Documents/Projects/Web Design and Development/Requeriment Project/disaster-app/disaster-app/conf/routes
-// @DATE:Mon Mar 30 14:07:47 BOT 2020
+// @SOURCE:C:/Users/etorr/IdeaProjects/semester-project-inso4115-group-9/conf/routes
+// @DATE:Fri Apr 10 11:29:06 BOT 2020
 
 import play.api.mvc.Call
 
@@ -10,14 +10,41 @@ import _root_.controllers.Assets.Asset
 // @LINE:9
 package controllers {
 
-  // @LINE:15
+  // @LINE:12
+  class ReverseRegister(_prefix: => String) {
+    def _defaultPrefix: String = {
+      if (_prefix.endsWith("/")) "" else "/"
+    }
+
+  
+    // @LINE:16
+    def goToLogin(): Call = {
+      
+      Call("GET", _prefix + { _defaultPrefix } + "login")
+    }
+  
+    // @LINE:12
+    def listUsers(): Call = {
+      
+      Call("GET", _prefix + { _defaultPrefix } + "register")
+    }
+  
+    // @LINE:13
+    def createUser(): Call = {
+      
+      Call("POST", _prefix + { _defaultPrefix } + "register")
+    }
+  
+  }
+
+  // @LINE:23
   class ReverseAssets(_prefix: => String) {
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
   
-    // @LINE:15
+    // @LINE:23
     def versioned(file:Asset): Call = {
       implicit lazy val _rrc = new play.core.routing.ReverseRouteContext(Map(("path", "/public"))); _rrc
       Call("GET", _prefix + { _defaultPrefix } + "assets/" + implicitly[play.api.mvc.PathBindable[Asset]].unbind("file", file))
@@ -25,14 +52,14 @@ package controllers {
   
   }
 
-  // @LINE:12
+  // @LINE:20
   class ReverseUser(_prefix: => String) {
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
   
-    // @LINE:12
+    // @LINE:20
     def index(): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "api/user")
@@ -49,8 +76,16 @@ package controllers {
   
     // @LINE:9
     def index(): Call = {
+    
+      () match {
       
-      Call("GET", _prefix)
+        // @LINE:9
+        case ()  =>
+          
+          Call("GET", _prefix)
+      
+      }
+    
     }
   
   }

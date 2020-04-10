@@ -1,0 +1,54 @@
+@(form: Form[RegisterForm.Data], postUrl: Call)(implicit request: MessagesRequestHeader)
+
+  @main("Register") {
+
+<html class="backgroundImg">
+    <center>
+        <h1 style="text-align: center;">Register</h1>
+
+        <hr>
+        @* Flash shows updates to a page *@
+        @request.flash.data.map{ case (name, value) =>
+        <div>@name: @value</div>
+        }
+
+        @* Global errors are not tied to any particular form field *@
+        @if(form.hasGlobalErrors) {
+        @form.globalErrors.map { error: FormError =>
+        <div>
+            @error.key: @error.message
+        </div>
+        }
+        }
+
+        @helper.form(postUrl) {
+        @helper.CSRF.formField
+
+        <div style="padding-left: 20%">
+            @helper.inputText(form("First Name"))
+
+            @helper.inputText(form("Last Name"))
+
+            @helper.inputText(form("Email"))
+
+            @helper.inputRadioGroup(form("Gender"), options = Seq("M"->"Male","F"->"Female"))
+
+            @helper.inputDate(form("Date of birth"))
+
+            @helper.inputText(form("Phone"))
+
+            @helper.inputPassword(form("Password"))
+
+            @helper.inputPassword(form("Re-type Password"))
+        </div>
+
+        <div style="text-align: center;">
+            <button class="button">Register Now!</button>
+        </div>
+    </center>
+
+    <br>
+</html>
+
+    }
+  }

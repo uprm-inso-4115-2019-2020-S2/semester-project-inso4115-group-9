@@ -1,0 +1,72 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300);
+
+h1 {
+  background: black !important;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  padding-top: 10px;
+  font-family: 'Open Sans', sans-serif;
+  color: white;
+
+}
+
+center {
+ width: 30%;
+ text-align: left;
+ font-family: 'Open Sans', sans-serif;
+ padding-bottom: 10px;
+ color: white;
+ border-radius: 15px;
+ margin-left: 60%;
+ margin-right: auto;
+ background: black;
+ opacity : 60%;
+
+}
+
+center.login {
+ width: 30%;
+ text-align: left;
+ font-family: 'Open Sans', sans-serif;
+ padding-bottom: 10px;
+ color: white;
+ border-radius: 15px;
+ margin-left: auto;
+ margin-right: auto;
+ background: black;
+ opacity : 60%;
+
+}
+
+
+button {
+font-family: 'Open Sans', sans-serif;
+}
+
+.button {
+  border-radius: 5px;
+  padding-top : 5px;
+  padding-bottom: 5px;
+  padding-left: 15px;
+  padding-right: 15px;
+  background-color: rgb(224, 224, 224);
+  font-size: 15px;
+}
+
+
+html.backgroundImg {
+    width:100%;
+    height:100%;
+    background-image: url("../images/pr_flag.jpg") !important;
+    background-size: cover;
+    background-position: center center;
+}
+
+
+html.login {
+    width:100%;
+    height:100%;
+    background-image: url("../images/gifbackground.gif") !important;
+    background-size: cover;
+    background-position: center center;
+}

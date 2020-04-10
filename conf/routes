@@ -8,6 +8,14 @@
 # Home Page
 GET     /                               controllers.Application.index
 
+# Register
+GET     /register                   controllers.Register.listUsers
+POST    /register                   controllers.Register.createUser
+
+# Login
+GET     /login                      controllers.Register.goToLogin
+POST    /login                      controllers.Application.index
+
 # User Routes
 GET     /api/user                       controllers.User.index
 
