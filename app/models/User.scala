@@ -5,7 +5,7 @@ import slick.lifted.Tag
 import play.api.libs.json.Json
 
 // Create our User type as a standard case class
-case class User(id: Int, 
+case class User(id: Option[Int],
                 firstname: String,
                 lastname: String,
                 email: String,
@@ -25,7 +25,7 @@ class UsersTable(tag: Tag) extends Table[User](tag, "users"){
   def date_birth: Rep[String] = column[String]("date_birth")
   def requests_completed = column[Int]("requests_completed")
 
-  def * = (id, firstname, lastname, email, gender, phone, date_birth, requests_completed) <> ((User.apply _).tupled, User.unapply)
+  def * = (id.?, firstname, lastname, email, gender, phone, date_birth, requests_completed) <> ((User.apply _).tupled, User.unapply)
 }
 
 // User Json Formatter

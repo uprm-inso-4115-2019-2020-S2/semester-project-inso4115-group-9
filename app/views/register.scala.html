@@ -1,4 +1,4 @@
-@(form: Form[RegisterForm.Data], postUrl: Call)(implicit request: MessagesRequestHeader)
+@(form: Form[RegisterData])(implicit request: MessagesRequestHeader)
 
   @main("Register") {
 
@@ -6,49 +6,44 @@
     <center>
         <h1 style="text-align: center;">Register</h1>
 
-        <hr>
-        @* Flash shows updates to a page *@
-        @request.flash.data.map{ case (name, value) =>
-        <div>@name: @value</div>
-        }
 
-        @* Global errors are not tied to any particular form field *@
-        @if(form.hasGlobalErrors) {
-        @form.globalErrors.map { error: FormError =>
-        <div>
-            @error.key: @error.message
+            @helper.form(action = routes.Register.createUser()){
+            @helper.CSRF.formField
+        <div style="padding-left:10%">
+            <table>
+                <td>
+                    @helper.inputText(form("firstName"), '_label -> "First Name")
+
+                    @helper.inputText(form("lastName"), '_label -> "Last Name")
+
+                    @helper.inputText(form("email"), '_label -> "Email")
+
+                    @helper.inputRadioGroup(form("gender"), options = Seq("M"->"Male","F"->"Female"),'_label -> "Gender")
+                </td>
+                <td style="padding-left:10%">
+                    @helper.inputDate(form("date_birth"), '_label -> "Date")
+
+                    @helper.inputText(form("phone"), '_label -> "Phone")
+
+                    @helper.inputPassword(form("password"), '_label -> "Password")
+
+                    @helper.inputPassword(form("retypePassword"), '_label -> "Re-Type Password")
+                </td>
+            </table>
+            <br>
+
+
+        </div>
+        <div style="text-align:center;">
+            <input type="submit" class="button" value="Register Now!"/>
         </div>
         }
-        }
 
-        @helper.form(postUrl) {
-        @helper.CSRF.formField
 
-        <div style="padding-left: 20%">
-            @helper.inputText(form("First Name"))
-
-            @helper.inputText(form("Last Name"))
-
-            @helper.inputText(form("Email"))
-
-            @helper.inputRadioGroup(form("Gender"), options = Seq("M"->"Male","F"->"Female"))
-
-            @helper.inputDate(form("Date of birth"))
-
-            @helper.inputText(form("Phone"))
-
-            @helper.inputPassword(form("Password"))
-
-            @helper.inputPassword(form("Re-type Password"))
-        </div>
-
-        <div style="text-align: center;">
-            <button class="button">Register Now!</button>
-        </div>
     </center>
 
     <br>
 </html>
 
-    }
-  }
+
+}

@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/Users/etorr/IdeaProjects/semester-project-inso4115-group-9/conf/routes
-// @DATE:Fri Apr 10 11:29:06 BOT 2020
+// @DATE:Fri Apr 10 18:26:30 BOT 2020
 
 package router
 
@@ -48,7 +48,7 @@ class Routes(
 
   def documentation = List(
     ("""GET""", this.prefix, """controllers.Application.index"""),
-    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """register""", """controllers.Register.listUsers"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """register""", """controllers.Register.goToRegister"""),
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """register""", """controllers.Register.createUser"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """login""", """controllers.Register.goToLogin"""),
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """login""", """controllers.Application.index"""),
@@ -80,15 +80,15 @@ class Routes(
   )
 
   // @LINE:12
-  private[this] lazy val controllers_Register_listUsers1_route = Route("GET",
+  private[this] lazy val controllers_Register_goToRegister1_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("register")))
   )
-  private[this] lazy val controllers_Register_listUsers1_invoker = createInvoker(
-    Register_3.listUsers,
+  private[this] lazy val controllers_Register_goToRegister1_invoker = createInvoker(
+    Register_3.goToRegister,
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.Register",
-      "listUsers",
+      "goToRegister",
       Nil,
       "GET",
       this.prefix + """register""",
@@ -197,9 +197,9 @@ class Routes(
       }
   
     // @LINE:12
-    case controllers_Register_listUsers1_route(params@_) =>
+    case controllers_Register_goToRegister1_route(params@_) =>
       call { 
-        controllers_Register_listUsers1_invoker.call(Register_3.listUsers)
+        controllers_Register_goToRegister1_invoker.call(Register_3.goToRegister)
       }
   
     // @LINE:13

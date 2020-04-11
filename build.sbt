@@ -18,6 +18,7 @@ libraryDependencies += "com.typesafe.slick" %% "slick" % "3.3.2"
 libraryDependencies += "com.typesafe.slick" %% "slick-hikaricp" % "3.3.2"
 libraryDependencies += "org.mindrot" % "jbcrypt" % "0.4"
 
+
 // Adds additional packages into Twirl
 //TwirlKeys.templateImports += "com.disasterapp.controllers._"
 

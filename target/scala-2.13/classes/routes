@@ -9,7 +9,7 @@
 GET     /                               controllers.Application.index
 
 # Register
-GET     /register                   controllers.Register.listUsers
+GET     /register                   controllers.Register.goToRegister
 POST    /register                   controllers.Register.createUser
 
 # Login

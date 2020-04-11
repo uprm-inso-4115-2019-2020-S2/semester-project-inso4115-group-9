@@ -31,6 +31,7 @@ object UserServices {
         .recover {
             case ex: Exception => ex.getCause.getMessage
         }
+
     }
 
     def update(newUser: User, userId: Int): Future[String] = {

@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:C:/Users/etorr/IdeaProjects/semester-project-inso4115-group-9/conf/routes
-// @DATE:Fri Apr 10 11:29:06 BOT 2020
+// @DATE:Fri Apr 10 18:26:30 BOT 2020
 
 import play.api.routing.JavaScriptReverseRoute
 
@@ -29,8 +29,8 @@ package controllers.javascript {
     )
   
     // @LINE:12
-    def listUsers: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.Register.listUsers",
+    def goToRegister: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.Register.goToRegister",
       """
         function() {
           return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "register"})
