@@ -9,6 +9,7 @@ scalaVersion := "2.13.1"
 
 libraryDependencies += guice
 libraryDependencies += jdbc
+libraryDependencies ++= evolutions
 libraryDependencies += "org.scalatestplus.play" %% "scalatestplus-play" % "5.0.0" % Test
 libraryDependencies += "org.postgresql" % "postgresql" % "42.2.10"
 libraryDependencies += "com.typesafe.play" %% "play-slick" % "5.0.0"
