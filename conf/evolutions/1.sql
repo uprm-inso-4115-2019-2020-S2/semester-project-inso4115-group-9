@@ -14,3 +14,26 @@ CREATE TABLE User (
     uZipCode varchar(10),
     uCountry varchar(20)
 );
+
+CREATE TABLE Login (
+    lid INTEGER REFERENCES User (uid) ON DELETE CASCADE,
+    luserName varchar(20),
+    lpassword varchar(256),
+    PRIMARY KEY (lid)
+);
+
+CREATE TABLE Request (
+    rid SERIAL PRIMARY KEY,
+    rSupplyName varchar(100),
+    rTime TIMESTAMP,
+    rStatus BOOLEAN,
+    rDescription varchar(500),
+    uid INTEGER REFERENCES User (uid)
+)
+
+CREATE TABLE Donation(
+    did SERIAL PRIMARY KEY,
+    sSupplyName varchar(100),
+    dQuantity INTEGER,
+    dTime TIMESTAMP,
+)
