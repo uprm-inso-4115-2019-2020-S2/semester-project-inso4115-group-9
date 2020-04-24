@@ -36,4 +36,5 @@ CREATE TABLE Donation(
     sSupplyName varchar(100),
     dQuantity INTEGER,
     dTime TIMESTAMP,
+    uid INTEGER REFERENCES User (uid)
 )
