@@ -8,11 +8,11 @@ lazy val root = (project in file(".")).enablePlugins(PlayScala)
 scalaVersion := "2.13.1"
 
 libraryDependencies += guice
-libraryDependencies += jdbc
-libraryDependencies ++= evolutions
+//libraryDependencies += jdbc
 libraryDependencies += "org.scalatestplus.play" %% "scalatestplus-play" % "5.0.0" % Test
 libraryDependencies += "org.postgresql" % "postgresql" % "42.2.10"
 libraryDependencies += "com.typesafe.play" %% "play-slick" % "5.0.0"
+libraryDependencies += "com.typesafe.play" %% "play-slick-evolutions" % "5.0.0"
 libraryDependencies += "com.typesafe.slick" %% "slick-codegen" % "3.3.2"
 libraryDependencies += "com.typesafe.play" %% "play-json" % "2.8.1"
 libraryDependencies += "com.typesafe.slick" %% "slick" % "3.3.2"
